@@ -44,7 +44,7 @@ A főoldalon esetleg információk jelenhetnek meg az alkalmazással kapcsolatba
 A regisztráció vendégek számára elérhető. A linkre kattintva meg kell adnia a felhasználónak pár rá vonatkozó adatot (e-mail cím, jelszó, lakhely, stb.).
 Ha a regisztráció sikertelen az alkalmazás egy hibaüzenetben tájékoztatja a felhasználót a keletkezett problémáról.
 
-![EmpUpdate](docs/images/employee.png)
+![EmpUpdate](docs/images/employee_update.png)
 
 ![WorkrecordCreate](docs/images/workrecord_create.png)
 
