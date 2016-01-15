@@ -2,11 +2,8 @@
 
 ## I. Követelményanalízis
 
-Az alkalmazás célja a a dolgozok munkaidejének online adminisztrálása gyorsan és egyszerűen. 
+Az alkalmazás célja a dolgozok munkaidejének online adminisztrálása gyorsan és egyszerűen. 
 Internet hozzáférés mellett platformfüggetlenül.
-...
-
-...
 
 #### Funkcionális elvárások
 * **Vendégként**,
@@ -34,7 +31,7 @@ A főoldalon esetleg információk jelenhetnek meg az alkalmazással kapcsolatba
 ### Használatieset-model, funkcionális követelmények
 
 #### Szerepkörök
-* **Vendég**: Hozzáférhet a főoldal tartalmához, továbbá a regisztrációs ürlaphoz és a bejelentkezés funkcióhoz
+* **Vendég**: Hozzáférhet a főoldal tartalmához
 * **Alkalmazott**: Teljes körű hozzáférést biztosít a program számára, módosíthatja adatait, új munkaidő bejegyzést vehet fel, módosíthat és törölhet
 
 #### Használati-eset diagram.
@@ -47,7 +44,17 @@ A főoldalon esetleg információk jelenhetnek meg az alkalmazással kapcsolatba
 A regisztráció vendégek számára elérhető. A linkre kattintva meg kell adnia a felhasználónak pár rá vonatkozó adatot (e-mail cím, jelszó, lakhely, stb.).
 Ha a regisztráció sikertelen az alkalmazás egy hibaüzenetben tájékoztatja a felhasználót a keletkezett problémáról.
 
-![Registration](docs/images/reg.png)
+![EmpUpdate](docs/images/employee.png)
+
+![WorkrecordCreate](docs/images/workrecord_create.png)
+
+![WorkrecordUpdateProfile](docs/images/workrecord_update_prof.png)
+
+![WorkrecordUpdateWrecs](docs/images/workrecord_update_wrecs.png)
+
+![WorkrecordDeleteProfile](docs/images/workrecord_delete_prof.png)
+
+![WorkrecordDeleteWrecs](docs/images/workrecord_delete_wrecs.png)
 
 ...
 
@@ -204,11 +211,3 @@ Az alkalmazás funkcióihoz bejelentkezés szükséges. Ezt megtehetjük a kezd�
 Itt meg kell adnunk a regisztráció során megadott e-mail címet és a jelszót.
 
 1. Személyes adatok szerkesztése:
-
-    ...
-    
-    ...
-
-...
-
-...
