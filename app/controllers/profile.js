@@ -2,10 +2,19 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
     actions: {
+        deleteWorkrecord: function (id) {
+            this.store.findRecord('employee', 'UcvHiZV8m9bFx+hTWUKF').then(function(emp) {
+                emp.set("workrecords", emp.get("workrecords").removeObject(id));
+                emp.save();
+            });
+            this.store.findRecord("workrecord", id).then(function(workrecord) {
+                workrecord.destroyRecord();
+            });
+        },
         addBreak: function(id) {
             console.log("Workrecord update start");
-            this.store.findRecord('time', id).then(function(time) {
-                var breakValue = time.get('absenceTime');
+            this.store.findRecord("workrecord", id).then(function(workrecord) {
+                var breakValue = workrecord.get('absenceTime');
                 var newValue;
                 
                 if(breakValue + 5 <= 120) {
@@ -14,15 +23,15 @@ export default Ember.Controller.extend({
                     newValue = breakValue;
                 }
                 
-                time.set('absenceTime', newValue);
-                time.save();
+                workrecord.set('absenceTime', newValue);
+                workrecord.save();
             });
             console.log("Workrecord update success");
         },
         removeBreak: function(id) {
             console.log("Workrecord update start");
-            this.store.findRecord('time', id).then(function(time) {
-                var breakValue = time.get('absenceTime');
+            this.store.findRecord("workrecord", id).then(function(workrecord) {
+                var breakValue = workrecord.get('absenceTime');
                 var newValue;
                 
                 if(breakValue - 5 >= 0) {
@@ -31,8 +40,8 @@ export default Ember.Controller.extend({
                     newValue = breakValue;
                 }
                 
-                time.set('absenceTime', newValue);
-                time.save();
+                workrecord.set('absenceTime', newValue);
+                workrecord.save();
             });
             console.log("Workrecord update success");
         },

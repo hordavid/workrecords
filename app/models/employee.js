@@ -6,5 +6,5 @@ export default DS.Model.extend({
   job: DS.attr("string"),
   email: DS.attr("string"),
   phone: DS.attr("string"),
-  times: DS.hasMany("time", {async: true})
+  workrecords: DS.hasMany("workrecord", {async: true})
 });

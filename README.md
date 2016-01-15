@@ -150,12 +150,11 @@ kialakításához a Bootstrap és Bootswatch nyújtotta megoldásokat használtu
     * /application.js
 
 * **/app/component**
-    * /time-form.js
+    * /workrecord-form.js
     
 * **/app/controllers**
     * /new-workrecord.js
     * /profile.js
-    * /workrecord.js
     * /workrecords.js
     
 * **/app/models**
@@ -166,7 +165,6 @@ kialakításához a Bootstrap és Bootswatch nyújtotta megoldásokat használtu
     * /index.js
     * /new-time.js
     * /profile.js
-    * /workrecord.js
     * /workrecords.js
 
 * **/app/templates**
@@ -175,7 +173,6 @@ kialakításához a Bootstrap és Bootswatch nyújtotta megoldásokat használtu
     * /index.hbs
     * /new-time.hbs
     * /profile.hbs
-    * /workrecord.hbs
     * /workrecords.hbs
 
 ## IV. Tesztelés

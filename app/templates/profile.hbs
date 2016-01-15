@@ -43,24 +43,24 @@
         <th>Műveletek</th>
     </thead>
     <tbody>
-        {{#each model.Employee.times as |time|}}
+        {{#each model.Employee.workrecords as |workrecord|}}
             <tr>
-                <td>{{time.project}}</td>
-                <td>{{time.date}}</td>
-                <td>{{time.begin}}</td>
-                <td>{{time.end}}</td>
-                <td>{{time.absenceTime}} perc</td>
+                <td>{{workrecord.project}}</td>
+                <td>{{workrecord.date}}</td>
+                <td>{{workrecord.begin}}</td>
+                <td>{{workrecord.end}}</td>
+                <td>{{workrecord.absenceTime}} perc</td>
                 <td>
-                    <button {{action "deleteTime" time.id}} class="btn btn-sm btn-danger">
+                    <button {{action "deleteTime" workrecord.id}} class="btn btn-sm btn-danger">
                         <!--<span class="glyphicon glyphicon-minus"></span>-->
                         D
                     </button>
                     
-                    <button {{action "addBreak" time.id}} class="btn btn-sm btn-success">
+                    <button {{action "addBreak" workrecord.id}} class="btn btn-sm btn-success">
                         <span class="glyphicon glyphicon-plus"></span>
                     </button>
                     
-                    <button {{action "removeBreak" time.id}} class="btn btn-sm btn-warning">
+                    <button {{action "removeBreak" workrecord.id}} class="btn btn-sm btn-warning">
                         <span class="glyphicon glyphicon-minus"></span>
                     </button>
                 </td>
