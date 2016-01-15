@@ -1,0 +1,72 @@
+<h1>{{model.Employee.firstname}} {{model.Employee.lastname}} adatlapja</h1>
+<br>
+
+<table class="table">
+    <tr>
+        <td><h3>Személyes adatok</h3></td>
+        <td><button class="btn btn-default btn-sm pull-right" {{action "updateEmployee" model.Employee.id}} id="btn-custom">Szerkesztés</button></td>
+    </tr>
+</table>
+
+<hr>
+<label class="col-lg-2 control-label">Vezetéknév</label>
+<div class="col-lg-10">
+    <div class="well well-sm" name="firstname">{{model.Employee.firstname}}</div>
+</div>    
+<label class="col-lg-2 control-label">Keresztnév</label>
+<div class="col-lg-10">
+    <div class="well well-sm" name="lastname">{{model.Employee.lastname}}</div>
+</div>
+<label class="col-lg-2 control-label">Beosztás</label>
+<div class="col-lg-10">
+    <div class="well well-sm" name="job">{{model.Employee.job}}</div>
+</div>
+<label class="col-lg-2 control-label">E-mail</label>
+<div class="col-lg-10">
+    <div class="well well-sm" name="email">{{model.Employee.email}}</div>
+</div>
+<label class="col-lg-2 control-label">Telefonszám</label>
+<div class="col-lg-10">
+    <div class="well well-sm" name="phone">{{model.Employee.phone}}</div>
+</div>
+
+<br>
+<h3>Jelenléti ív</h3>
+<hr>
+<table class="table table-striped table-hover">
+    <thead>
+        <th>Projekt</th>
+        <th>Dátum</th>
+        <th>Munkaidő kezdete</th>
+        <th>Munkaidő vége</th>
+        <th>Szünet</th>
+        <th>Műveletek</th>
+    </thead>
+    <tbody>
+        {{#each model.Employee.times as |time|}}
+            <tr>
+                <td>{{time.project}}</td>
+                <td>{{time.date}}</td>
+                <td>{{time.begin}}</td>
+                <td>{{time.end}}</td>
+                <td>{{time.absenceTime}} perc</td>
+                <td>
+                    <button {{action "deleteTime" time.id}} class="btn btn-sm btn-danger">
+                        <!--<span class="glyphicon glyphicon-minus"></span>-->
+                        D
+                    </button>
+                    
+                    <button {{action "addBreak" time.id}} class="btn btn-sm btn-success">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </button>
+                    
+                    <button {{action "removeBreak" time.id}} class="btn btn-sm btn-warning">
+                        <span class="glyphicon glyphicon-minus"></span>
+                    </button>
+                </td>
+            </tr>
+        {{/each}}
+    </tbody>
+</table>
+{{outlet}}
+

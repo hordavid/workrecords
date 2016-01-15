@@ -18,6 +18,16 @@ module.exports = function(environment) {
       // when it is created
     }
   };
+  
+  ENV.contentSecurityPolicy = {
+    'default-src': "'none'",
+    'script-src': "'self'",
+    'font-src': "'self' 'unsafe-eval' https://fonts.gstatic.com",
+    'connect-src': "'self' 'unsafe-eval' https://rest-json-api-hordavid.c9users.io",
+    'img-src': "'self'",
+    'style-src': "'self' 'unsafe-eval' https://fonts.googleapis.com",
+    'media-src': "'self'"
+  };
 
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;

@@ -1,3 +1,15 @@
-<h2 id="title">Welcome to Ember</h2>
-
-{{outlet}}
+<div class="container">
+    <center>
+    <div class="row">
+      <ul class="nav nav-pills">
+        <li>{{#link-to "index"}}Főoldal{{/link-to}}</li>
+        <li>{{#link-to "profile"}}Adatlap{{/link-to}}</li>
+        <li>{{#link-to "times"}}Munkaidők{{/link-to}}</li>
+      </ul>
+    </div>
+    </center>
+    <br>
+    <div class="row well">
+      {{outlet}}
+    </div>
+</div>

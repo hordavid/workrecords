@@ -1,0 +1,50 @@
+<form class="form-horizontal" method="post">
+    <fieldset>
+        <legend>Új bejegyzés felvétele</legend>
+        <div class="form-group">
+            <label for="employee" class="col-lg-2 control-label">Dolgozó</label>
+            <div class="employee col-lg-4">
+                <select class="form-control" name="employee">
+                    {{#each employees as |employee|}}
+                    <option value="{{employee.id}}">{{employee.firstname}} {{employee.lastname}}</option>
+                    {{/each}}
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="project" class="col-lg-2 control-label">Projekt</label>
+            <div  class="col-lg-4">
+                <input type="text" class="form-control" name="project" placeholder="" required="required">    
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="date" class="col-lg-2 control-label">Dátum</label>
+            <div  class="col-lg-4">
+                <input type="date" class="form-control" name="date" placeholder="" required="required">    
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="begin" class="col-lg-2 control-label">Munkaidő kezdete</label>
+            <div  class="col-lg-2">
+                <input type="time" class="form-control"  name="begin" placeholder="" required="required">    
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="end" class="col-lg-2 control-label">Munkaidő vége</label>
+            <div  class="col-lg-2">
+                <input type="time" class="form-control"  name="end" placeholder="" required="required">    
+            </div>
+        </div>
+        <!--<div class="form-group">
+            <label for="absence" class="col-lg-2 control-label">Szünet (perc)</label>
+            <div  class="col-lg-2">
+                <input type="number" class="form-control"  name="absence" min="0" max="120" step="5" value="0" placeholder="" required="required">    
+            </div>
+        </div>-->
+        <div class="form-group col-lg-8">
+            <button {{action "onSubmit"}} class="btn btn-success">Mentés</button>
+            {{#link-to "times"}}<button class="btn btn-default">Vissza</button>{{/link-to}}
+        </div>
+    </fieldset>
+</form>
+{{yield}}
