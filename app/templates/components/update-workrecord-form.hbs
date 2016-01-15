@@ -1,0 +1,37 @@
+<div class="panel panel-default col-lg-4 col-md-offset-4">
+    <div class="panel-heading">Bejegyzés szerkesztése</div>
+    <form class="form-horizontal" method="post">
+        <div class="panel-body">
+            
+            <div class="form-group">
+                <label for="project" class="col-lg-3 control-label">Projekt</label>
+                <div  class="col-lg-9">
+                    <input type="text" class="form-control" name="project" value="{{workrecord.project}}" required="required">    
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="date" class="col-lg-3 control-label">Dátum</label>
+                <div  class="col-lg-9">
+                    <input type="date" class="form-control" name="date" value="{{workrecord.date}}" required="required">    
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="begin" class="col-lg-3 control-label">Munkaidő kezdete</label>
+                <div  class="col-lg-6">
+                    <input type="time" class="form-control"  name="begin" value="{{workrecord.begin}}" required="required">    
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="end" class="col-lg-3 control-label">Munkaidő vége</label>
+                <div  class="col-lg-6">
+                    <input type="time" class="form-control"  name="end" value="{{workrecord.end}}" required="required">    
+                </div>
+            </div>
+        </div>
+        <div class="panel-footer">
+            <button {{action "onSubmit"}} class="btn btn-success">Mentés</button>
+            {{#link-to "workrecords"}}<button class="btn btn-default">Vissza</button>{{/link-to}}
+        </div>
+    </form>
+</div>
+{{yield}}

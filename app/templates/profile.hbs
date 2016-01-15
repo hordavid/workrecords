@@ -51,18 +51,24 @@
                 <td>{{workrecord.end}}</td>
                 <td>{{workrecord.absenceTime}} perc</td>
                 <td>
-                    <button {{action "deleteTime" workrecord.id}} class="btn btn-sm btn-danger">
+                    <button {{action "deleteWorkrecord" workrecord.id}} class="btn btn-sm btn-danger" data-toggle="tooltip" data-placement="bottom" title="Törlés">
                         <!--<span class="glyphicon glyphicon-minus"></span>-->
                         D
                     </button>
                     
-                    <button {{action "addBreak" workrecord.id}} class="btn btn-sm btn-success">
+                    <button {{action "addBreak" workrecord.id}} class="btn btn-sm btn-success" data-toggle="tooltip" data-placement="bottom" title="Növel">
                         <span class="glyphicon glyphicon-plus"></span>
                     </button>
                     
-                    <button {{action "removeBreak" workrecord.id}} class="btn btn-sm btn-warning">
+                    <button {{action "removeBreak" workrecord.id}} class="btn btn-sm btn-warning" data-toggle="tooltip" data-placement="bottom" title="Csökkent">
                         <span class="glyphicon glyphicon-minus"></span>
                     </button>
+                    
+                    {{#link-to "update-workrecord" workrecord}}
+                    <button class="btn btn-sm btn-primary" data-toggle="tooltip" data-placement="bottom" title="Módosítás">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </button>
+                    {{/link-to}}
                 </td>
             </tr>
         {{/each}}

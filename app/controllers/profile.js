@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
     actions: {
         deleteWorkrecord: function (id) {
-            this.store.findRecord('employee', 'UcvHiZV8m9bFx+hTWUKF').then(function(emp) {
+            this.store.findRecord('employee', 'l68LwFAElrUmvvOPbbMt').then(function(emp) {
                 emp.set("workrecords", emp.get("workrecords").removeObject(id));
                 emp.save();
             });

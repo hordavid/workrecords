@@ -10,8 +10,8 @@ Internet hozzáférés mellett platformfüggetlenül.
 
 #### Funkcionális elvárások
 * **Vendégként**,
-    * Szeretnék regisztrálni, hogy ügyfél lehessek. --> Regisztráció
-    * Szeretnék bejelentkezni az alkalmazásba. --> Bejelentkezés
+    * Szeretnék bejelentkezni az alkalmazásba.
+
 * **Alkalmazott**,
     * Szeretnék új bejegyzéseket felvenni
     * Szeretnék meglévő bejegyzéseket szerkeszteni
@@ -21,8 +21,7 @@ Internet hozzáférés mellett platformfüggetlenül.
     * Szeretném látni az összes bejegyzést
     * Szeretném a szünetemet módosítani
 
-* A funkciók csak bejelentkezett ügyfelek számára elérhetőek, kivéve a regisztráció. 
-A belépéshez szükséges adatok adatbázisban tárolódnak, ezek segítségével történik az autentikáció.
+* A funkciók csak bejelentkezett felhasználók számára elérhetőek.
 A főoldalon esetleg információk jelenhetnek meg az alkalmazással kapcsolatban.
 
 
@@ -60,13 +59,10 @@ Ha a regisztráció sikertelen az alkalmazás egy hibaüzenetben tájékoztatja 
 _Publikus:_
 
 * Főoldal
-* Regisztráció
-* Bejelentkezés
 
 _Alkalmazott:_
 
 * Főoldal
-* Bejelentkezés
 * Adatlap
     * Személyes adatok módosítása
     * Saját munkaidők listája
@@ -79,31 +75,19 @@ _Alkalmazott:_
 
 #### Végpontok
 * GET / : Főoldal
-* GET /login : Belépés oldal
-* POST /login : Belpési adatok elküldése
-* GET /reg : Regisztrációs oldal
-* POST /reg : Alkalmazott felvétele
 * GET /profile : Adatlap oldal
 * UPDATE /profile : Adatlap módosítása, szünet módosítása
 * DELETE /profile : Munkaidő törlése
-* GET /times : Munkaidők oldal
-* POST /times : Új bejegyzés létrehozása
-* UPDATE /times : Bejegyzés szerkesztése
-* DELETE /times : Bejegyzés törlése
+* GET /workrecords : Munkaidők oldal
+* POST /workrecords : Új bejegyzés létrehozása
+* UPDATE /workrecords : Bejegyzés szerkesztése
+* DELETE /workrecords : Bejegyzés törlése
 
 ### Felhasználóifelület-modell (Oldalvázlatok)
 
-**_Regisztráció_**
+**_Főoldal_**
 
 ![Index mockup](docs/images/mockups/index.jpg)
-
-**_Regisztráció_**
-
-![Registration mockup](docs/images/mockups/reg.jpg)
-
-**_Bejelentkezés_**
-
-![Log in mockup](docs/images/mockups/login.jpg)
 
 **_Adatlap_**
 
@@ -112,6 +96,10 @@ _Alkalmazott:_
 **_Munkaidők_**
 
 ![Workrecords mockup](docs/images/mockups/workrecords.jpg)
+
+**_Bejegyzés (munkaidő) módosítása_**
+
+![Update workrecords mockup](docs/images/mockups/update.jpg)
 
 ### Osztálymodell
 
@@ -150,11 +138,13 @@ kialakításához a Bootstrap és Bootswatch nyújtotta megoldásokat használtu
     * /application.js
 
 * **/app/component**
+    * /update-workrecord-form.js
     * /workrecord-form.js
     
 * **/app/controllers**
     * /new-workrecord.js
     * /profile.js
+    * /update-workrecord.js
     * /workrecords.js
     
 * **/app/models**
@@ -165,35 +155,30 @@ kialakításához a Bootstrap és Bootswatch nyújtotta megoldásokat használtu
     * /index.js
     * /new-time.js
     * /profile.js
+    * /update-workrecord.js
     * /workrecords.js
 
 * **/app/templates**
+    * /components/update-workrecord-form.hbs
     * /components/time-form.hbs
     * /application.hbs
     * /index.hbs
-    * /new-time.hbs
+    * /new-workrecord.hbs
     * /profile.hbs
+    * /update-workrecord.hbs
     * /workrecords.hbs
 
 ## IV. Tesztelés
 
 Tesztesetek:
 
-1. Regisztráció helyes adatokkal
+1. Adatlap szerkesztése
 
-2. Regisztráció helytelen adatokkal
+2. Szünet módosítása
 
-3. Bejelentkezés hejes adatokkal
+3. Bejegyzés felvétele
 
-4. Bejelentkezés hibás adatokkal
-
-5. Adatlap szerkesztése
-
-6. Szünet módosítása
-
-7. Bejegyzés felvétele
-
-8. Bejegyzés módosítása
+4. Bejegyzés módosítása
 
 
 ## V. Felhasználói dokumentáció
