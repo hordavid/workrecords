@@ -46,7 +46,7 @@ export default Ember.Controller.extend({
             console.log("Workrecord update success");
         },
         updateEmployee: function(id) {
-            if($("#btn-custom").html() === "Szerkesztés") {
+            if($("#btn-update").html() === "Szerkesztés") {
                 $("div").each(function() {
                     if(Ember.$(this).hasClass("col-lg-10")) {
                         var children = $(this).children();
@@ -59,7 +59,7 @@ export default Ember.Controller.extend({
                         $(this).append(input);
                     }
                 }); 
-                $("#btn-custom").html("Mentés").removeClass("btn-default").addClass("btn-primary");
+                $("#btn-update").html("Mentés").removeClass("btn-default").addClass("btn-success");
             } else {
                 console.log("Employee update start");
                 this.store.findRecord('employee', id).then(function(employee) {
@@ -92,9 +92,19 @@ export default Ember.Controller.extend({
                         
                     }
                 });   
-                $("#btn-custom").html("Szerkesztés").removeClass("btn-primary").addClass("btn-default");
+                $("#btn-update").html("Szerkesztés").removeClass("btn-success").addClass("btn-default");
+            }
+        },
+        hideDatas: function() {
+            if($("#btn-hide").html() === "Elrejt") {
+                $(".hideable").hide();
+                $("#btn-update").prop('disabled', true);
+                $("#btn-hide").html("Mutat");
+            } else {
+                $(".hideable").show();
+                $("#btn-update").prop('disabled', false);
+                $("#btn-hide").html("Elrejt");
             }
         }
-        
     }
 });

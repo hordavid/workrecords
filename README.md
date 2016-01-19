@@ -39,26 +39,35 @@ A főoldalon esetleg információk jelenhetnek meg az alkalmazással kapcsolatba
 
 #### Folyamatok.
 
-**1. Regisztráció**
+A program szimulálja a belépett felhasználót, nincs külön login. Egy magadott felhasználót látunk a programban.
 
-A regisztráció vendégek számára elérhető. A linkre kattintva meg kell adnia a felhasználónak pár rá vonatkozó adatot (e-mail cím, jelszó, lakhely, stb.).
-Ha a regisztráció sikertelen az alkalmazás egy hibaüzenetben tájékoztatja a felhasználót a keletkezett problémáról.
+**1. Személyes adatok módosítása**
+
+Az adatlap fülön elérhető egy szerkesztés gomb, ennek segítségével tudunk módosítani az adatokon.
 
 ![EmpUpdate](docs/images/employee_update.png)
 
+**2. Új bejegyzés felvétele**
+
+A munkaidők oldalon van lehetőségünk egy űrlap segítségével új bejegyzést felvenni.
+
 ![WorkrecordCreate](docs/images/workrecord_create.png)
+
+**3. Bejegyzés módosítása**
+
+Ez a funkció elérhető mind az adatlapnál mind a munkaidőknél. Egy űrlap segítségével tehetjük ezt meg.
 
 ![WorkrecordUpdateProfile](docs/images/workrecord_update_prof.png)
 
 ![WorkrecordUpdateWrecs](docs/images/workrecord_update_wrecs.png)
 
+**4. Bejegyzés szerkezstése**
+
+Ez a funkció elérhető mind az adatlapnál mind a munkaidőknél.
+
 ![WorkrecordDeleteProfile](docs/images/workrecord_delete_prof.png)
 
 ![WorkrecordDeleteWrecs](docs/images/workrecord_delete_wrecs.png)
-
-...
-
-...
 
 ## II. Tervezés
 
@@ -115,9 +124,6 @@ _Alkalmazott:_
 
 #### Adatbázisterv
 ![Database plan](docs/images/database.png)
-
-#### Állapotdiagram
-![Status diagram](docs/images/status.png)
 
 ### Dinamikus működés
 
@@ -205,9 +211,3 @@ Merevlemez-terület: minimum 1 GB
 * `npm install`
 * `bower install`
 * Futtatás: `ember server`
-
-### A program használata:
-Az alkalmazás funkcióihoz bejelentkezés szükséges. Ezt megtehetjük a kezdő képernyőn a `Bejelentkezés` linkre kattintva. 
-Itt meg kell adnunk a regisztráció során megadott e-mail címet és a jelszót.
-
-1. Személyes adatok szerkesztése:

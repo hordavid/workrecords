@@ -1,33 +1,37 @@
 <h1>{{model.Employee.firstname}} {{model.Employee.lastname}} adatlapja</h1>
 <br>
 
-<table class="table">
-    <tr>
-        <td><h3>Személyes adatok</h3></td>
-        <td><button class="btn btn-default btn-sm pull-right" {{action "updateEmployee" model.Employee.id}} id="btn-custom">Szerkesztés</button></td>
-    </tr>
-</table>
+<div>
+    <h3>Személyes adatok</h3>
+    <button class="btn btn-primary btn-sm col-md-1" {{action "hideDatas"}} id="btn-hide">Elrejt</button>
+    <button class="btn btn-default btn-sm col-md-1" {{action "updateEmployee" model.Employee.id}} id="btn-update">Szerkesztés</button>
+</div>
 
+<br>
 <hr>
-<label class="col-lg-2 control-label">Vezetéknév</label>
-<div class="col-lg-10">
-    <div class="well well-sm" name="firstname">{{model.Employee.firstname}}</div>
-</div>    
-<label class="col-lg-2 control-label">Keresztnév</label>
-<div class="col-lg-10">
-    <div class="well well-sm" name="lastname">{{model.Employee.lastname}}</div>
-</div>
-<label class="col-lg-2 control-label">Beosztás</label>
-<div class="col-lg-10">
-    <div class="well well-sm" name="job">{{model.Employee.job}}</div>
-</div>
-<label class="col-lg-2 control-label">E-mail</label>
-<div class="col-lg-10">
-    <div class="well well-sm" name="email">{{model.Employee.email}}</div>
-</div>
-<label class="col-lg-2 control-label">Telefonszám</label>
-<div class="col-lg-10">
-    <div class="well well-sm" name="phone">{{model.Employee.phone}}</div>
+
+<div class="hideable">
+    
+    <label class="col-lg-2 control-label">Vezetéknév</label>
+    <div class="col-lg-10">
+        <div class="well well-sm" name="firstname">{{model.Employee.firstname}}</div>
+    </div>    
+    <label class="col-lg-2 control-label">Keresztnév</label>
+    <div class="col-lg-10">
+        <div class="well well-sm" name="lastname">{{model.Employee.lastname}}</div>
+    </div>
+    <label class="col-lg-2 control-label">Beosztás</label>
+    <div class="col-lg-10">
+        <div class="well well-sm" name="job">{{model.Employee.job}}</div>
+    </div>
+    <label class="col-lg-2 control-label">E-mail</label>
+    <div class="col-lg-10">
+        <div class="well well-sm" name="email">{{model.Employee.email}}</div>
+    </div>
+    <label class="col-lg-2 control-label">Telefonszám</label>
+    <div class="col-lg-10">
+        <div class="well well-sm" name="phone">{{model.Employee.phone}}</div>
+    </div>
 </div>
 
 <br>
