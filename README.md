@@ -157,12 +157,12 @@ kialakításához a Bootstrap és Bootswatch nyújtotta megoldásokat használtu
 * **/app/controllers**
     * /new-workrecord.js
     * /profile.js
-    * /update-workrecord.js
+    * /update-workrecord.js 
     * /workrecords.js
     
 * **/app/models**
-    * /employee.js
-    * /workrecord.js
+    * /employee.js - Dolgozó modelje
+    * /workrecord.js - Munkaidő modelje
 
 * **/app/routes**
     * /index.js
@@ -172,14 +172,14 @@ kialakításához a Bootstrap és Bootswatch nyújtotta megoldásokat használtu
     * /workrecords.js
 
 * **/app/templates**
-    * /components/update-workrecord-form.hbs
-    * /components/time-form.hbs
-    * /application.hbs
-    * /index.hbs
-    * /new-workrecord.hbs
-    * /profile.hbs
-    * /update-workrecord.hbs
-    * /workrecords.hbs
+    * /components/update-workrecord-form.hbs - Bejegyzés szerkesztése űrlap
+    * /components/workrecord-form.hbs - Új bejegyzés felvételéhez űrlap 
+    * /application.hbs - Default template, alap layout
+    * /index.hbs - Főoldal template
+    * /new-workrecord.hbs - Új bejegyzés felvétele template
+    * /profile.hbs - Adatlap template
+    * /update-workrecord.hbs - Bejegyzés módosításának template
+    * /workrecords.hbs - Munkaidők oldal template
 
 ## IV. Tesztelés
 
